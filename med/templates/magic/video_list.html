@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Personas</h2>
+<em>Persona - DNI</em>
+<ul>
+    {% for video in object_list %}
+        <li>{{ video.titulo }} - {{ video.url }} </li>
+    {% endfor %}
+</ul>
+ 
+<h2>Añadir video</h2>
+ 
+Haga click <a href="{% url 'magi:video_add'  %}">aquí</a> para añadir un video.
+{% endblock %}
