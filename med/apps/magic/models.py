@@ -6,7 +6,7 @@ from django.forms import ModelForm
 # Create your models here.
 
 class magic(models.Model):
-    """docstring for ClassName"""
+    """magic model"""
 
     titulo = models.CharField(max_length=50, blank=True)
     url = models.URLField(blank=True)

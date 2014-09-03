@@ -7,9 +7,10 @@ from django.http import HttpResponseRedirect
 from .models import magic, MagicForm
 
 
-class VideoList(ListView):
+class VideoView(ListView):
  
     model = magic
+    template_name = 'magic/video_list.html'
 
 def add_video(request):
     if request.method == 'POST': # si el usuario está enviando el formulario con datos
