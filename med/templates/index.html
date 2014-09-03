@@ -2,28 +2,18 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="main">
-	<span>Hello, dear visitor this is a demo for Django-Magic-Embed</span>
-	<span>Type any url</span>
-	<!--
-	<form>
+	<center>
+		<span>Hello, dear visitor this is a demo for Django-Magic-Embed</span><br/>
+		<span>Type any url from Vimeo or YouTube and see the magic!</span>
+	</center>
+	<form enctype="multipart/form-data" action="{% url 'magic:add_video' %}" method="post">
 		<div class="row">
-			<div class="col-lg-6">
-				<div class="input-group">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">Go!</button>
-					</span>
-					<input type="text" class="form-control">
-				</div><!-- /input-group --
-			</div><!-- /.col-lg-6 --
-		</div>
-	</form>-->
-	<form action="{% url 'magic:add_video' %}" method="post">
-	    {% csrf_token %} 
-	 
-	    {{ form.as_p }}
-	 
-	    <input type="submit" value="Añadir video" />
+			<div class="col-md-5 col-md-offset-3">
+			    {% csrf_token %}			 
+			    {{ form|crispy }}
+	    		<input type="submit" value="Añadir video" />
+	    	</div>
+	    </div>
 	</form>
-
 </div>
 {% endblock content %}
