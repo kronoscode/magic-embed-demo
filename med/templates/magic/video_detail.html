@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load magicembed_tags %}
+{% block content %}
+<ul>
+	<div class="video">
+    	<p>Your Video Tittle</p>
+        <li>{{ video.titulo }}</li> 
+        <p>This is your video URL</p>
+        <a href="{{ video.url }}">{{ video.url }}</a>
+        <p>And this is your video Embed</p>
+        <p>{{ video.url|magicembed:"640x480" }}</p>
+        <p>And finally a thumbnail</p>
+        <img src="{{ video.url|magicthumbnail }}">
+   	</div>
+</ul>
+ 
+<h2>Añadir video</h2>
+ 
+Haga click <a href="/">aquí</a> para añadir un video.
+{% endblock %}
