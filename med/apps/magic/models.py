@@ -5,7 +5,7 @@ from django.forms import ModelForm
 
 # Create your models here.
 
-class magic(models.Model):
+class Magic(models.Model):
     """magic model"""
 
     titulo = models.CharField(max_length=50, blank=True)
@@ -21,4 +21,4 @@ class magic(models.Model):
 class MagicForm(ModelForm):
  
     class Meta:
-        model = magic
+        model = Magic

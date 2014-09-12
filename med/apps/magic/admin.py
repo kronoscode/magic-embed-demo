@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import magic
+from .models import Magic
 
-admin.site.register(magic)
+admin.site.register(Magic)
