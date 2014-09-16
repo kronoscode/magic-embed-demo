@@ -1,20 +1,50 @@
 {% extends "base.html" %}
 {% load magicembed_tags %}
 {% block content %}
-<ul>
-	<div class="video">
-    	<p>Your Video Tittle</p>
-        <li>{{ video.titulo }}</li> 
-        <p>This is your video URL</p>
-        <a href="{{ video.url }}">{{ video.url }}</a>
-        <p>And this is your video Embed</p>
-        <p>{{ video.url|magicembed:"640x480" }}</p>
-        <p>And finally a thumbnail</p>
-        <img src="{{ video.url|magicthumbnail }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+    			<p class="text-center">Your Video Tittle</p>
+    			<div class="row">
+    				<div class="col-md-6">
+    					<code> video.titulo </code>
+    				</div>
+    				<div class="col-md-6">
+        				<p>{{ video.titulo }}</p>
+        			</div>
+        		</div> 
+        		<p class="text-center">This is your video URL</p>
+        		<div class="row">
+        			<div class="col-md-6">
+        				<code> video.url </code>
+        			</div>
+        			<div class="col-md-6">
+        				<a href="{{ video.url }}">{{ video.url }}</a>
+        			</div>
+        		</div>
+        		<p class="text-center">And this is your video Embed</p>
+        		<div class="row">
+        			<div class="col-md-6">
+        				<code> video.url|magicembed:"640x480" </code>
+        			</div>
+        			<div class="col-md-6">
+        				<p>{{ video.url|magicembed:"640x480" }}</p>
+        			</div>
+        		</div>
+        		<p class="text-center">And finally a thumbnail</p>
+        		<div class="row">
+        			<div class="col-md-6">
+        				<code> video.url|magicthumbnail </code>
+        			</div>
+        			<div class="col-md-6">
+        				<img src="{{ video.url|magicthumbnail }}">
+        			</div>
+        		</div>
+        	</div>
+   		</div>
    	</div>
-</ul>
- 
-<h2>Añadir video</h2>
- 
-Haga click <a href="/">aquí</a> para añadir un video.
+ 	<center>
+		<h2>Añadir video</h2>
+		<span>Haga click <a href="/">aquí</a> para añadir un video.</span>
+	</center>
 {% endblock %}
