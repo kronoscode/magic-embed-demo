@@ -14,23 +14,50 @@
     <![endif]-->
 
     {% block css %}
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://kronoscode.com/assets/css/kronos.css">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://kronoscode.com/assets/css/menu_overlay.css">
+    <link rel="stylesheet" type="text/css" href="http://kronoscode.com/assets/css/flat.css">
+    <link rel="stylesheet" type="text/css" href="http://kronoscode.com/assets/css/lightbox.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}">
     {% endblock %}
     </head>
 
   <body>
     {% block header %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 header">
-                <span class="text-center">Django Magic Embed</span>
+    <header id="header" class="header-team">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a href="/"><img src="{% static 'img/kronoscode.png' %}" alt="kronoscode"></a>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <nav id="main-menu">
+                        <a class="trigger-overlay contact-link" href="#" data-target-overlay="contact">
+                            CONTACT US
+                        </a>
+                        <a class="trigger-overlay" href="#" data-target-overlay="menu">
+                            MENU <i class="fa fa-bars"></i>
+                        </a>
+                    </nav>
+                </div>
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="title-container">
+                        <h1 class="page-title">MEET THE CREW</h1>
+                        <h2 class="page-sub-title">Fun, ideas, code &amp; hard work</h2>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
     {% endblock header%}
     {% block content %}
     {% endblock content %}
+    {% block footer %}
     <footer id="footer" class="section-spacing">
         <h2><a href="#" class="more-about-link">MORE ABOUT US?</a></h2>
         <a href="#" class="footer-arrow"><i class="fa fa-angle-up"></i></a>
@@ -41,7 +68,7 @@
                         <div class="row">
                             <div class="col-lg-7 col-md-7 col-sm-7">
                                 <div class="proudly-block">
-                                    <img class="proudly" src="assets/img/logo-footer.png">
+                                    <img class="proudly" src="{% static 'img/logo-footer.png' %}">
                                     <aside class="footer-block">
                                         <p class="footer-info footer-info-line">Colonial Los Robles,<br>Etapa 6, Casa #11<br>Managua, Nicaragua</p>
                                         <pclass="footer-info">+505.8663.5944<p></p>
@@ -67,6 +94,76 @@
             </div>
         </aside>
     </footer>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <div class="overlay overlay-kronos" id="main-overlay">
+        <button type="button" class="overlay-close toggle-overlay-close">X</button>
+    </div>
+    <div id="overlays-content" class="hide">
+        
+        <div data-overlay="menu">
+            <nav class="overlay-nav">
+                <ul>
+                    <li><a href="/about.html">WHAT WE DO</a></li>
+                    <li><a href="/team.html">MEET OUR TEAM</a></li>
+                    <li><a href="/#projects" class="toggle-overlay-close">OUR WORK</a></li>
+                    <li><a href="#" class="trigger-overlay" data-target-overlay="contact">LET'S TALK</a></li>
+                    <li class="overlay-footer">
+                        <aside class="overlay-footer-left">
+                            <a href="https://www.facebook.com/kronoscode">Facebook</a> <a href="https://twitter.com/kronoscode">twitter</a> <a href="http://dribbble.com/kronoscode">dribbble</a>
+                        </aside>
+                        <aside class="overlay-footer-right">
+                            lead@kronoscode.com
+                        </aside>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div data-overlay="contact">
+            <div class="contact-form">
+                <h2>CONTACT US</h2>
+                <form id="contacto" role="form" action="/contact/" method="POST">
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">Hi guys my name is</label>
+                        <input type="text" class="col-sm-6" placeholder="your name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">I´m looking for</label>
+                        <select class="contact-select col-sm-6" name="looking">
+                            <option value="Web Design">Web Design</option>
+                            <option value="App Developer">App Developer</option>
+                            <option value="SEO Optimizacion">SEO Optimization</option>
+                        </select>
+                    </div>
+                    <div class="form-group" name="from">
+                        <input type="email" class="col-sm-12" placeholder="your email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <center>
+                                <input type="submit" class="btn btn-kblue btn-lg btn-block" value="SEND">
+                            </center>
+                        </div>
+                    </div>
+                </form>
+
+                <aside class="overlay-footer-left">
+                    Colonial Los Robles,<br>Etapa 6, Casa #11<br>Managua, Nicaragua
+                </aside>
+                <aside class="overlay-footer-right">
+                    lead@kronoscode.com <br>+505.8663.5944
+                </aside>
+            </div>
+
+        </div>
+    </div>
+    {% endblock footer %}
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://kronoscode.com/assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://kronoscode.com/assets/js/classie.js"></script>
+    <script type="text/javascript" src="http://kronoscode.com/assets/js/image.js"></script>
+    <script type="text/javascript" src="http://kronoscode.com/assets/js/lightbox.js"></script>
+    <script type="text/javascript" src="http://kronoscode.com/assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="{% static 'js/project.js' %}"></script>
     </body>
 </html>
