@@ -14,11 +14,11 @@
                         <tr>
                             <td>
                                 {% verbatim %}
-        					       <code>{{ video.titulo }}</code>
+        					       <code>{{ video.title }}</code>
                                 {% endverbatim %}
                             </td>
                             <td>        				
-            				    <p>{{ video.titulo }}</p>
+            				    <p>{{ video.TITLE }}</p>
                             </td>
                         </tr>
             		</tbody>	 
@@ -33,7 +33,7 @@
                                 {% endverbatim %}
                             </td>
                             <td>
-        				        <a href="{{ video.url }}">{{ video.url }}</a>
+        				        <a href="{{ video.URL }}">{{ video.URL }}</a>
                             </td>
                         </tr>
                     </tbody>
@@ -44,11 +44,11 @@
                         <tr>
                             <td>
                                 {% verbatim %}
-                    				<code>{{ video.url|magicembed:"658x420" }}</code>
+                    				<code>{{ video.url|magicembed:"580x420" }}</code>
                                 {% endverbatim %}
                             </td>
                             <td>
-                                <p>{{ video.url|magicembed:"580x420" }}</p>
+                                <p>{{ video.URL|magicembed:"580x420" }}</p>
                             </td>
                         </tr>
                     </tbody>
@@ -63,7 +63,7 @@
                                 {% endverbatim %}
                             </td>
                             <td>
-        				        <img src="{{ video.url|magicthumbnail }}">
+        				        <img src="{{ video.URL|magicthumbnail }}">
                             </td>
                         </tr>
                     </tbody>
@@ -74,7 +74,7 @@
  	<center>
         <br/>
 		<h2>Add other video</h2>
-		<span>Click <a href="/" class="btn btn-4 btn-4d icon-arrow-left">here</a> to add another video.</span>
+		<a href="/" class="btn btn-4 btn-4d icon-arrow-left">Here</a>
 	</center>
 </section>
 {% endblock %}

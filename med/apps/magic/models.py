@@ -8,11 +8,11 @@ from django.forms import ModelForm
 class Magic(models.Model):
     """magic model"""
 
-    titulo = models.CharField(max_length=50, blank=True)
-    url = models.URLField(blank=True)
+    TITLE = models.CharField(max_length=50, blank=True)
+    URL = models.URLField(blank=True)
 
     def __unicode__(self):
-        return self.titulo
+        return self.TiTLE
 
     class Meta:
         verbose_name = "Video"
