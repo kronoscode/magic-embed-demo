@@ -1,50 +1,80 @@
 {% extends "base.html" %}
 {% load magicembed_tags %}
 {% block content %}
+<section class="section-message section-message-team section-spacing">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-    			<p class="text-center">Your Video Tittle</p>
-    			<div class="row">
-    				<div class="col-md-6">
-    					<code> video.titulo </code>
-    				</div>
-    				<div class="col-md-6">
-        				<p>{{ video.titulo }}</p>
-        			</div>
-        		</div> 
-        		<p class="text-center">This is your video URL</p>
-        		<div class="row">
-        			<div class="col-md-6">
-        				<code> video.url </code>
-        			</div>
-        			<div class="col-md-6">
-        				<a href="{{ video.url }}">{{ video.url }}</a>
-        			</div>
-        		</div>
-        		<p class="text-center">And this is your video Embed</p>
-        		<div class="row">
-        			<div class="col-md-6">
-        				<code> video.url|magicembed:"640x480" </code>
-        			</div>
-        			<div class="col-md-6">
-        				<p>{{ video.url|magicembed:"640x480" }}</p>
-        			</div>
-        		</div>
-        		<p class="text-center">And finally a thumbnail</p>
-        		<div class="row">
-        			<div class="col-md-6">
-        				<code> video.url|magicthumbnail </code>
-        			</div>
-        			<div class="col-md-6">
-        				<img src="{{ video.url|magicthumbnail }}">
-        			</div>
-        		</div>
+                <center>
+                    <h2>Here, is where the magic happens and how we did it!</h2>
+                </center>
+                <table class="table table-bordered">
+                    <caption>Your Video Tittle</caption>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {% verbatim %}
+        					       <code>{{ video.titulo }}</code>
+                                {% endverbatim %}
+                            </td>
+                            <td>        				
+            				    <p>{{ video.titulo }}</p>
+                            </td>
+                        </tr>
+            		</tbody>	 
+                </table>
+                <table class="table table-bordered">
+                    <caption>This is your video URL</caption>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {% verbatim %}
+                    				<code>{{ video.url }}</code>
+                                {% endverbatim %}
+                            </td>
+                            <td>
+        				        <a href="{{ video.url }}">{{ video.url }}</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered">
+                    <caption>This is your video embed</caption>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {% verbatim %}
+                    				<code>{{ video.url|magicembed:"658x420" }}</code>
+                                {% endverbatim %}
+                            </td>
+                            <td>
+                                <p>{{ video.url|magicembed:"580x420" }}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered">
+                    <caption>And finally a thumbnail</caption>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {% verbatim %}
+                    				<code>{{ video.url|magicthumbnail }}</code>
+                                {% endverbatim %}
+                            </td>
+                            <td>
+        				        <img src="{{ video.url|magicthumbnail }}">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>        			
         	</div>
    		</div>
    	</div>
  	<center>
-		<h2>Añadir video</h2>
-		<span>Haga click <a href="/">aquí</a> para añadir un video.</span>
+        <br/>
+		<h2>Add other video</h2>
+		<span>Click <a href="/" class="btn btn-4 btn-4d icon-arrow-left">here</a> to add another video.</span>
 	</center>
+</section>
 {% endblock %}

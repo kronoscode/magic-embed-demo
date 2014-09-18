@@ -5,16 +5,22 @@
 	<center>
 		<p>Hello, dear visitor this is a demo for Django-Magic-Embed</p><br/>
 		<p>It's Open Source, see the code in Github</p>
-		<p><i class="fa fa-github"></i></p>
+		<br/>
+		<a href="https://github.com/fitoria/django-magicembed"><i class="fa fa-github source-code"></i></a>
+		<br/>
 		<p>Complete the form and see the magic happens!</p>
 	</center>
 	<form enctype="multipart/form-data" action="{% url 'magic:add_video' %}" method="post">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 col-md-offset-3">
-				    {% csrf_token %}			 
-				    {{ form|crispy }}
-		    		<input type="submit" value="Añadir video" />
+				<div class="col-md-6 col-md-offset-3">
+				    <center>
+					    {% csrf_token %}			 
+					    {{ form|crispy }}
+					</center>
+				    <center>
+		    			<input type="submit" class="btn btn-2 btn-2g" value="Añadir video" />
+		    		</center>
 		    	</div>
 		    </div>
 		</div>
