@@ -12,4 +12,4 @@ Pillow==2.1.0
 coverage==3.6
 dj-database-url==0.2.2
 django-autoslug==1.7.1
-magicembed==0.2
+magicembed==0.3
