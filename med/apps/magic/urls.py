@@ -1,10 +1,8 @@
 from django.conf.urls import patterns, url
 
-from . import views 
-from .views import VideoView, add_video
-
+from .views import VideoView
 
 urlpatterns = patterns('magic.views',
-    url(r'^list/(?P<pk>\d+)/$', VideoView.as_view(), name='list_video'),
-    url(r'^$', views.add_video, name='add_video'),
+    url(r'^video/(?P<pk>\d+)/$', VideoView.as_view(), name='video_detail'),
+    url(r'^$', 'add_video', name='add_video'),
 )

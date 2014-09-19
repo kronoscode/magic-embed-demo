@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 {% block content %}
 <section class="section-message section-message-team section-spacing">
 	<center>
 		<p>Hello, dear visitor this is a demo for Django-Magic-Embed</p><br/>
 		<p>It's Open Source, see the code in Github</p>
 		<br/>
-		<a href="https://github.com/fitoria/django-magicembed"><i class="fa fa-github source-code"></i></a>
+		<a href="https://github.com/kronoscode/django-magicembed"><i class="fa fa-github source-code"></i></a>
 		<br/>
 		<p>Complete the form and see the magic happens!</p>
 	</center>
@@ -16,7 +15,7 @@
 				<div class="col-md-6 col-md-offset-3">
 				    <center>
 					    {% csrf_token %}			 
-					    {{ form|crispy }}
+					    {{ form.as_p }}
 					</center>
 				    <center>
 		    			<input type="submit" class="btn btn-2 btn-2g" value="Add Video" />

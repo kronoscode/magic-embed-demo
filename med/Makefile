@@ -3,6 +3,3 @@ run:
 
 shell:
 	python manage.py shell
-
-migrate:
-	python manage.py migrate

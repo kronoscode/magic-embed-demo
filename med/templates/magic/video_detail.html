@@ -18,7 +18,7 @@
                                 {% endverbatim %}
                             </td>
                             <td>        				
-            				    <p>{{ video.TITLE }}</p>
+            				    <p>{{ video.title }}</p>
                             </td>
                         </tr>
             		</tbody>	 
@@ -33,7 +33,7 @@
                                 {% endverbatim %}
                             </td>
                             <td>
-        				        <a href="{{ video.URL }}">{{ video.URL }}</a>
+        				        <a href="{{ video.url }}">{{ video.url }}</a>
                             </td>
                         </tr>
                     </tbody>
@@ -48,7 +48,7 @@
                                 {% endverbatim %}
                             </td>
                             <td>
-                                <p>{{ video.URL|magicembed:"580x420" }}</p>
+                                <p>{{ video.url|magicembed:"580x420" }}</p>
                             </td>
                         </tr>
                     </tbody>
@@ -63,7 +63,7 @@
                                 {% endverbatim %}
                             </td>
                             <td>
-        				        <img src="{{ video.URL|magicthumbnail }}">
+        				        <img src="{{ video.url|magicthumbnail }}">
                             </td>
                         </tr>
                     </tbody>
