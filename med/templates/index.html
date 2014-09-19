@@ -12,7 +12,7 @@
 	<form enctype="multipart/form-data" action="{% url 'magic:add_video' %}" method="post">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
+				<div class="col-md-6 col-md-offset-3 magic-form">
 				    <center>
 					    {% csrf_token %}			 
 					    {{ form.as_p }}
