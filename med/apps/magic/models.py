@@ -1,24 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from django.conf import settings
-from django.forms import ModelForm
 
-# Create your models here.
+class Video(models.Model):
 
-class Magic(models.Model):
-    """magic model"""
-
-    TITLE = models.CharField(max_length=50, blank=True)
-    URL = models.URLField(blank=True)
+    title = models.CharField("TITLE", max_length=50)
+    url = models.URLField("URL", help_text="Video can be from any origin like youtube, vimeo, metacafe, etc")
 
     def __unicode__(self):
-        return self.TiTLE
+        return self.title
 
     class Meta:
         verbose_name = "Video"
         verbose_name_plural = "Videos"
 
-class MagicForm(ModelForm):
- 
-    class Meta:
-        model = Magic

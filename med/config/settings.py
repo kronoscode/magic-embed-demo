@@ -40,11 +40,7 @@ class Common(Configuration):
         'django.contrib.admindocs',
     )
     THIRD_PARTY_APPS = (
-        'south',  # Database migration helpers:
-        'crispy_forms',  # Form layouts
-        'sorl.thumbnail',
         'magicembed',
-        'widget_tweaks',
     )
 
     # Apps specific for this project go here.
@@ -164,7 +160,7 @@ class Common(Configuration):
     SOUTH_MIGRATION_MODULES = {
             'taggit': 'taggit.south_migrations',
     }
-    
+
     ########## MEDIA CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), 'media')
@@ -193,8 +189,8 @@ class Local(Common):
     ########## End mail settings
 
     ########## django-debug-toolbar
-    MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-    INSTALLED_APPS += ('debug_toolbar',)
+    #MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+    #INSTALLED_APPS += ('debug_toolbar',)
 
     INTERNAL_IPS = ('127.0.0.1',)
 
