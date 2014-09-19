@@ -33,7 +33,7 @@ and now this url is converted to a embed video in your page
 How to contrib
 ----------------
 
-1. Fork it ( http://github.com/fitoria/django-magicembed/fork )
+1. Fork it ( http://github.com/kronoscode/django-magicembed/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
